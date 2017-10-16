@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1C8954"
+    tools:context="com.example.otdom.check_in_check_out.MainActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar_top"></include>
+
+    <ImageView
+        android:id="@+id/vkirirom_logo"
+        android:layout_width="174dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="26dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/vkirirom_logo" />
+
+    <ImageView
+        android:id="@+id/check_logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        app:srcCompat="@drawable/check" />
+
+    <TextView
+        android:id="@+id/success"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Successfully!"
+        android:textColor="#ffffff"
+        android:textSize="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:id="@+id/btn1"
+        android:onClick="btn1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#ffffff"
+        android:textColor="#05A61B"
+        android:padding="10dp"
+        android:text="Generate qr key" />
+
+</LinearLayout>

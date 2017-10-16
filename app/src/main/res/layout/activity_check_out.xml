@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1C8954"
+    tools:context="com.example.otdom.check_in_check_out.Check_out">
+
+    <ImageView
+        android:id="@+id/vkirirom_logo1"
+        android:layout_width="174dp"
+        android:layout_height="142dp"
+        android:layout_marginTop="26dp"
+        android:layout_gravity="center"
+        android:src="@drawable/vkirirom_logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Your Check-in time is almost"
+        android:textColor="#ffffff"
+        android:textSize="25dp"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="Expire!"
+        android:textSize="25dp"
+        android:layout_gravity="center"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Check-out"
+        android:textColor="#05A61B"
+        android:background="#ffffff"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:padding="20dp"/>
+</LinearLayout>
