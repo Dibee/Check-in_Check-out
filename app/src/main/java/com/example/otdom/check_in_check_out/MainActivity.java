@@ -38,4 +38,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void gen_btn(View view) {
+    }
 }

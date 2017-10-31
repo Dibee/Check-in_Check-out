@@ -32,7 +32,6 @@ import java.net.URL;
 
 public class QR_Key extends AppCompatActivity {
     ImageView image;
-    String text2Qr;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,12 +47,9 @@ public class QR_Key extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     // Generate qr_code
         image = (ImageView) findViewById(R.id.image);
-
-        getJSON("http://10.10.11.3/MyWebservice/api/getdata.php");
+        getJSON("http://10.10.18.28/MyWebservice/api/getdata.php");
 
     }
-
-
 
     private void getJSON(final String urlWebService) {
 
@@ -64,15 +60,12 @@ public class QR_Key extends AppCompatActivity {
                 super.onPreExecute();
             }
 
-
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                Log.d("======DATA====", s);
+//                Log.d("======DATA====", s);
                 generateQRData(s);
             }
-
-
 
             @Override
             protected String doInBackground(Void... voids) {
@@ -101,7 +94,7 @@ public class QR_Key extends AppCompatActivity {
         String username;
         try {
             jsonArray = new JSONArray(json);
-            JSONObject obj = jsonArray.getJSONObject(0);
+            JSONObject obj = jsonArray.getJSONObject(4); //change to get last string in database
             username = obj.getString("name");
             BitMatrix bitMatrix = multiFormatWriter.encode(username, BarcodeFormat.QR_CODE, 150, 150);
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
@@ -112,7 +105,6 @@ public class QR_Key extends AppCompatActivity {
         } catch (WriterException e){
             e.printStackTrace();
         }
-
     }
 
     @Override
