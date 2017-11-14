@@ -36,7 +36,13 @@
         android:textSize="30dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"/>
-
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Your ID"
+        android:textColorHint="@color/colorWhite"
+        android:id="@+id/text"
+        android:inputType="number"/>
     <Button
         android:id="@+id/gen_btn"
         android:onClick="gen_btn"

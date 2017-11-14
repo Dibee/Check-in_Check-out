@@ -38,7 +38,6 @@ public class QR_Key extends AppCompatActivity {
     EditText text;
     int  val;
     SharedPreferences prefs;
-    String text2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +56,8 @@ public class QR_Key extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         // Generate qr_code
         text = (EditText) findViewById(R.id.text);
-//        Log.d("=======dddd", String.valueOf(text));
-////        text2 = text.getText().toString().trim();
-//        Log.d("===========", String.valueOf(text2));
-//        val = Integer.parseInt( text2);
-//        Log.d("=======dd", String.valueOf(val));
         image = (ImageView) findViewById(R.id.image);
-        getJSON("http://10.10.11.3/MyWebservice/api/getdata.php");
+        getJSON("http://10.10.11.3/MyWebservice/api/searchdata.php?string1="+val);
 
     }
 
@@ -107,15 +101,12 @@ public class QR_Key extends AppCompatActivity {
     public void generateQRData(String json){
         JSONArray jsonArray = null;
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-        // Integer.parseInt(text.getText().toString());
-        //val = Integer.parseInt( text2);
-        //Log.d("===========", String.valueOf(val));
         String username;
         try {
 
             jsonArray = new JSONArray(json);
             //JSONObject obj = jsonArray.getJSONObject(jsonArray.length()-1); //change to get last string in database
-            JSONObject obj = jsonArray.getJSONObject(val-1);
+            JSONObject obj = jsonArray.getJSONObject(0);
             //Log.v("++++++++++++++", String.valueOf(val));
             username = obj.getString("name");
             BitMatrix bitMatrix = multiFormatWriter.encode(username, BarcodeFormat.QR_CODE, 150, 150);
